@@ -15,8 +15,8 @@ class App extends Component {
         return (
             <div className="app">
                 <Router>
-                    <Header />
                     <main className='page-container'>
+                        <Header />
                         <Routes>
                             <Route exact path="/" element={<Trips />} />
                             <Route exact path="/trip-page/:id" element={<TripsItemDisplay />} />
