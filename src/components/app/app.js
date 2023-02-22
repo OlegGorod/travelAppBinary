@@ -1,9 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Component } from "react";
 
 import Footer from "../footer/footer";
 import Header from "../header/header";
-import TripsFilter from "../trips-filter/trips-filter";
 import Trips from "../trips/trips";
 import TripsItemDisplay from "../trips-item-display/trips-item-display";
 
@@ -17,15 +16,13 @@ class App extends Component {
             <div className="app">
                 <Router>
                     <Header />
-                    <main>
-
-                        <TripsFilter />
-                        <Trips />
+                    <main className='page-container'>
                         <Routes>
-                            <Route path="/trip-page/:id" element={<TripsItemDisplay />}></Route>
+                            <Route exact path="/" element={<Trips />} />
+                            <Route exact path="/trip-page/:id" element={<TripsItemDisplay />} />
                         </Routes>
+                        <Footer />
                     </main>
-                    <Footer />
                 </Router>
             </div>
         );

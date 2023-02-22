@@ -1,6 +1,7 @@
 import React from 'react';
 import { Fragment } from 'react';
 import TripsItem from '../trips-item/trips-item';
+import TripsFilter from "../trips-filter/trips-filter";
 
 import './trips.css'
 
@@ -10,6 +11,7 @@ const Trips = () => {
 
     return (
         <Fragment>
+            <TripsFilter />
             <section className="trips">
                 <h2 className="visually-hidden">Trips List</h2>
                 <ul className="trip-list">
