@@ -22,7 +22,11 @@
     font-family: 'Playfair Display', serif;
     text-decoration: none;
   }
-  
+
+  .header__logo:hover {
+    color: var(--color-blue-400);
+  }
+
   .header__nav {
     position: absolute;
     right: 0;

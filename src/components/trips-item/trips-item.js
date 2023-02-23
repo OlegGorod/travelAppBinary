@@ -1,12 +1,12 @@
 import React from "react"
 import { Fragment } from "react"
-import { useNavigate } from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 
 const TripsItem = (props) => {
     const navigate = useNavigate();
-    const { title, level, days, price, image, id } = props
-
+    const { title, level, days, price, image, id } = props;
+    console.log('id', id)
     return (
         <Fragment>
             <li data-test-id="trip-card" className="trip-card">
@@ -42,13 +42,12 @@ const TripsItem = (props) => {
                         </strong>
                     </div>
                 </div>
-                <a
+                <Link
                     data-test-id="trip-card-link"
-                    href='index.html'
-                    className="button"
-                    onClick={() => { navigate('/trip/' + id) }}>
+                    to={`/trip/${id}`}
+                    className="button">
                     Discover a trip
-                </a>
+                </Link>
             </li>
         </Fragment>
     )

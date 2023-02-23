@@ -4,7 +4,7 @@ import { Fragment } from "react"
 
 import './booking-modal.css'
 
-const BookingModal = () => {
+const BookingModal = ({setIsDisplayModal}) => {
     return (
         <Fragment>
 
@@ -13,6 +13,9 @@ const BookingModal = () => {
                     <button
                         data-test-id="book-trip-popup-close"
                         class="book-trip-popup__close"
+                        onClick={() => {
+                            setIsDisplayModal(false);
+                        }}
                     >
                         ×
                     </button>
@@ -69,7 +72,10 @@ const BookingModal = () => {
                         <button
                             data-test-id="book-trip-popup-submit"
                             class="button"
-                            type="submit"
+                            type="button"
+                            onClick={() => {
+                                setIsDisplayModal(false);
+                            }}
                         >
                             Book a trip
                         </button>

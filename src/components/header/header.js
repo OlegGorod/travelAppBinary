@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { Link } from "react-router-dom";
 
 import UserIcon from './user.svg'
 import BriefCase from './briefcase.svg'
@@ -11,9 +12,9 @@ const Header = () => {
     <Fragment>
       <header className="header">
         <div className="header__inner">
-          <a data-test-id="header-logo" href="./index.html" className="header__logo">
+          <Link data-test-id="header-logo" to="/" className="header__logo">
             Travel App
-          </a>
+          </Link>
           <nav data-test-id="header-nav" className="header__nav">
             <ul className="nav-header__list">
               <li className="nav-header__item" title="Bookings">
