@@ -47,8 +47,9 @@ const Header = () => {
                     <li className="profile-nav__item">
                       <a
                         data-test-id="header-profile-nav-sign-out"
-                        href="./sign-in.html"
+                        href="index.html"
                         className="profile-nav__sign-out button"
+                       
                       >
                         Sign Out
                       </a>

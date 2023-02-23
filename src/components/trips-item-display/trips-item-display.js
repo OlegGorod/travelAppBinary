@@ -10,7 +10,6 @@ const TripsItemDisplay = () => {
     const {id} = useParams();
     const project = tripsList[id];
     const { title, description, level, duration, price, image} = project
-    console.log(project)
    
     return (
         <main className="trip-page">
@@ -20,7 +19,7 @@ const TripsItemDisplay = () => {
           data-test-id="trip-details-image"
           src={image}
           className="trip__img"
-          alt="trip image"
+          alt="my life"
         />
         <div className="trip__content">
           <div className="trip-info">

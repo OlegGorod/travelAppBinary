@@ -1,16 +1,15 @@
 import React from "react"
 import { Fragment } from "react"
 import { useNavigate } from "react-router-dom"
-import { useParams } from "react-router-dom";
 
 
 const TripsItem = (props) => {
     const navigate = useNavigate();
-    const { title, descr, level, days, price, image, id} = props
-       
+    const { title, level, days, price, image, id } = props
+
     return (
         <Fragment>
-            <li data-test-id="trip-card" className="trip-card" onClick={() => {navigate('/trip-page/' + id)}}>
+            <li data-test-id="trip-card" className="trip-card">
                 <img
                     data-test-id="trip-card-image"
                     src={image}
@@ -43,7 +42,11 @@ const TripsItem = (props) => {
                         </strong>
                     </div>
                 </div>
-                <a data-test-id="trip-card-link" href="./trip.html" className="button">
+                <a
+                    data-test-id="trip-card-link"
+                    href='index.html'
+                    className="button"
+                    onClick={() => { navigate('/trip/' + id) }}>
                     Discover a trip
                 </a>
             </li>

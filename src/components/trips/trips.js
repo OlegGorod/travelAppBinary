@@ -1,19 +1,21 @@
 import React from 'react';
 import { Fragment } from 'react';
+import TripsFilter from '../trips-filter/trips-filter';
 import TripsItem from '../trips-item/trips-item';
 
 import './trips.css'
 
 const tripsList = require('../../helpers/trips.json');
 
-const Trips = () => {
-
+const Trips = (props) => {
+    const {data} = props
     return (
         <Fragment>
+            <TripsFilter changeState={props.changeState}/>
             <section className="trips">
                 <h2 className="visually-hidden">Trips List</h2>
                 <ul className="trip-list">
-                    {tripsList.map((item,idx) => {
+                    {data.map((item,idx) => {
                         return (
                             <TripsItem
                                 title={item.title}
