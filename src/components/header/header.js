@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import UserIcon from './user.svg'
 import BriefCase from './briefcase.svg'
 
-import './header.css'
 import '../../css/index.css'
 
 const Header = () => {
@@ -18,14 +17,14 @@ const Header = () => {
           <nav data-test-id="header-nav" className="header__nav">
             <ul className="nav-header__list">
               <li className="nav-header__item" title="Bookings">
-                <a
+                <Link
                   data-test-id="header-bookings-link"
-                  href="./bookings.html"
+                 to='/bookings'
                   className="nav-header__inner"
                 >
                   <span className="visually-hidden">Bookings</span>
                   <img src={BriefCase} alt=" icon" />
-                </a>
+                </Link>
               </li>
               <li className="nav-header__item" title="Profile">
                 <div
@@ -46,14 +45,14 @@ const Header = () => {
                       John Doe
                     </li>
                     <li className="profile-nav__item">
-                      <a
+                      <Link
                         data-test-id="header-profile-nav-sign-out"
-                        href="index.html"
+                        to='/sign-in'
                         className="profile-nav__sign-out button"
                        
                       >
                         Sign Out
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

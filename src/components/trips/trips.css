@@ -15,6 +15,7 @@
   
   .trip-card {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     max-width: 320px;
     background-color: var(--color-white);

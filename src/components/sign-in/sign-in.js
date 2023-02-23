@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './sign-in.css'
 
 const SignIn = () => {
@@ -26,13 +27,13 @@ const SignIn = () => {
         </form>
         <span>
           Don't have an account?
-          <a
+          <Link
             data-test-id="auth-sign-up-link"
-            href="./sign-up.html"
+            to='/sign-up'
             class="sign-in-form__link"
           >
             Sign Up
-          </a>
+          </Link>
         </span>
       </main>
     )

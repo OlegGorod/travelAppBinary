@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {Component, useState} from "react";
+import { Component } from "react";
 
 import Footer from "../footer/footer";
 import Header from "../header/header";
 import Trips from "../trips/trips";
-import TripsItemDisplay from "../trips-item-display/trips-item-display";
-// import BookingModal from "../booking-modal/booking-modal";
+import TripPage from "../trip-page/trip-page";
 import SignIn from "../sign-in/sign-in";
+import SignUp from "../sign-up/sign-up";
+import BookingPage from "../booking-page/booking-page";
 
 import './app.css'
 
@@ -48,9 +49,8 @@ class App extends Component {
         return (
             <div className="app">
                 <Router>
-                    <main>
-                        <Header />
-
+                    <Header />
+                    <main className="page-container">
                         <Routes>
                             <Route
                                 path="/"
@@ -64,10 +64,12 @@ class App extends Component {
                             </Route>
                             <Route
                                 path="/trip/:id"
-                                element={<TripsItemDisplay setBookedTrips={(newTrips) => this.setState({
+                                element={<TripPage setBookedTrips={(newTrips) => this.setState({
                                     bookedTrips: [...this.state.bookedTrips, newTrips]
                                 })} />}></Route>
                             <Route path="/sign-in" element={<SignIn />}></Route>
+                            <Route path="/sign-up" element={<SignUp />}></Route>
+                            <Route path="/bookings" element={<BookingPage />}></Route>
                         </Routes>
                         <Footer />
                     </main>

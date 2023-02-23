@@ -1,12 +1,10 @@
 import React from "react"
 import { Fragment } from "react"
-import {Link, useNavigate} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 const TripsItem = (props) => {
-    const navigate = useNavigate();
     const { title, level, days, price, image, id } = props;
-    console.log('id', id)
     return (
         <Fragment>
             <li data-test-id="trip-card" className="trip-card">

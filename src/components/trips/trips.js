@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Fragment } from 'react';
 import TripsFilter from '../trips-filter/trips-filter';
 import TripsItem from '../trips-item/trips-item';
 
 import './trips.css'
-
-const tripsList = require('../../helpers/trips.json');
 
 const Trips = (props) => {
     const {data} = props
