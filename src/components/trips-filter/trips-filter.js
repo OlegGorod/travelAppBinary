@@ -1,7 +1,6 @@
-import { Fragment, Component } from 'react'
+import {Fragment, Component} from 'react'
 
 import './trips-filter.css'
-
 
 
 class TripsFilter extends Component {
@@ -15,12 +14,13 @@ class TripsFilter extends Component {
         const dataId = e.target.dataset.testId;
         console.log(value, dataId);
     }
+
     render() {
         return (
             <Fragment>
                 <section className="trips-filter">
                     <h2 className="visually-hidden">Trips filter</h2>
-                    <form className="trips-filter__form" autoComplete="off" >
+                    <form className="trips-filter__form" autoComplete="off">
                         <label className="trips-filter__search input">
                             <span className="visually-hidden">Search by name</span>
                             <input

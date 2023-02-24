@@ -1,8 +1,8 @@
 .trips {
     padding: 60px 20px;
-  }
-  
-  .trip-list {
+}
+
+.trip-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, auto));
     justify-content: center;
@@ -11,9 +11,9 @@
     margin: 0 auto;
     padding: 0;
     list-style: none;
-  }
-  
-  .trip-card {
+}
+
+.trip-card {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -21,11 +21,11 @@
     background-color: var(--color-white);
     border-radius: 1px;
     box-shadow: var(--shadow);
-  }
-  
-  .trip-card__content {
+}
+
+.trip-card__content {
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 20px 30px;
-  }
+}

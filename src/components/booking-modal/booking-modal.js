@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import { Fragment } from "react"
+import React, {useState} from "react"
+import {Fragment} from "react"
 
 
 import './booking-modal.css'
 
 
-const BookingModal = ({ setIsDisplayModal, cardModal }) => {
-    const { duration, level, price, title } = cardModal
+const BookingModal = ({setIsDisplayModal, cardModal}) => {
+    const {duration, level, price, title} = cardModal
     const [value, setValue] = useState('1');
     const [date, setDate] = useState('');
 
@@ -14,7 +14,7 @@ const BookingModal = ({ setIsDisplayModal, cardModal }) => {
         e.preventDefault();
         if (date && value) {
             setIsDisplayModal(false)
-        } 
+        }
     }
 
     const handleDateChange = (e) => {

@@ -1,10 +1,10 @@
 import React from "react"
-import { Fragment } from "react"
-import { Link } from "react-router-dom"
+import {Fragment} from "react"
+import {Link} from "react-router-dom"
 
 
 const TripsItem = (props) => {
-    const { title, level, days, price, image, id } = props;
+    const {title, level, days, price, image, id} = props;
     return (
         <Fragment>
             <li data-test-id="trip-card" className="trip-card">

@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Component } from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {Component} from "react";
 
 import Footer from "../footer/footer";
 import Header from "../header/header";
@@ -39,17 +39,17 @@ class App extends Component {
     }
 
     changeState = (temporary) => {
-        this.setState({ temporary })
+        this.setState({temporary})
     }
 
     render() {
-        const { tripsList, temporary, bookedTrips } = this.state;
+        const {tripsList, temporary, bookedTrips} = this.state;
         const searchTrip = this.onSearch(tripsList, temporary);
 
         return (
             <div className="app">
                 <Router>
-                    <Header />
+                    <Header/>
                     <main className="page-container">
                         <Routes>
                             <Route
@@ -66,12 +66,12 @@ class App extends Component {
                                 path="/trip/:id"
                                 element={<TripPage setBookedTrips={(newTrips) => this.setState({
                                     bookedTrips: [...this.state.bookedTrips, newTrips]
-                                })} />}></Route>
-                            <Route path="/sign-in" element={<SignIn />}></Route>
-                            <Route path="/sign-up" element={<SignUp />}></Route>
-                            <Route path="/bookings" element={<BookingPage />}></Route>
+                                })}/>}></Route>
+                            <Route path="/sign-in" element={<SignIn/>}></Route>
+                            <Route path="/sign-up" element={<SignUp/>}></Route>
+                            <Route path="/bookings" element={<BookingPage/>}></Route>
                         </Routes>
-                        <Footer />
+                        <Footer/>
                     </main>
                 </Router>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fragment } from 'react';
+import {Fragment} from 'react';
 import TripsFilter from '../trips-filter/trips-filter';
 import TripsItem from '../trips-item/trips-item';
 
@@ -9,11 +9,11 @@ const Trips = (props) => {
     const {data} = props
     return (
         <Fragment>
-            <TripsFilter changeState={props.changeState} />
+            <TripsFilter changeState={props.changeState}/>
             <section className="trips">
                 <h2 className="visually-hidden">Trips List</h2>
                 <ul className="trip-list">
-                    {data.map((item,idx) => {
+                    {data.map((item, idx) => {
                         return (
                             <TripsItem
                                 title={item.title}
@@ -23,7 +23,7 @@ const Trips = (props) => {
                                 price={item.price}
                                 image={item.image}
                                 key={item.id}
-                                id={idx} />
+                                id={idx}/>
                         )
                     })}
                 </ul>
