@@ -1,7 +1,7 @@
 import {Fragment} from 'react'
+import {ReactComponent as Heart} from './heart.svg'
 
 import './footer.css'
-import Heart from './heart.svg'
 
 const Footer = () => {
     return (
@@ -13,11 +13,7 @@ const Footer = () => {
                         binary studio
                     </a>
                     with
-                    <img
-                        className="footer__icon"
-                        src={Heart}
-                        alt="heart icon"
-                    />
+                    <Heart className="footer__icon" />
                 </span>
             </footer>
         </Fragment>

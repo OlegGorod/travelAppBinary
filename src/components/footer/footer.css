@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     gap: 7px;
+    align-items: center;
 }
 
 .footer__icon {
@@ -24,4 +25,13 @@
 
 .footer__link:hover {
     color: var(--color-blue-300);
+}
+
+.footer__icon {
+    transition: .3s;
+}
+
+.footer__icon:hover {
+    fill: rgb(255, 71, 134);
+    cursor: pointer;
 }

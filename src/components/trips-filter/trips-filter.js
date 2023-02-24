@@ -2,7 +2,6 @@ import {Fragment, Component} from 'react'
 
 import './trips-filter.css'
 
-
 class TripsFilter extends Component {
     onSearch = (e) => {
         const value = e.target.value
@@ -12,7 +11,6 @@ class TripsFilter extends Component {
     onSearchDuration = (e) => {
         const value = e.target.value;
         const dataId = e.target.dataset.testId;
-        console.log(value, dataId);
     }
 
     render() {

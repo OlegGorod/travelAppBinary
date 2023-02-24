@@ -2,6 +2,7 @@ import React from "react"
 import {Fragment} from "react"
 import {Link} from "react-router-dom"
 
+import './trips-item.css';
 
 const TripsItem = (props) => {
     const {title, level, days, price, image, id} = props;
@@ -43,7 +44,7 @@ const TripsItem = (props) => {
                 <Link
                     data-test-id="trip-card-link"
                     to={`/trip/${id}`}
-                    className="button">
+                    className="trip-card-link">
                     Discover a trip
                 </Link>
             </li>

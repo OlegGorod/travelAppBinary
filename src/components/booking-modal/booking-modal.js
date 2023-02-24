@@ -1,19 +1,20 @@
-import React, {useState} from "react"
-import {Fragment} from "react"
+import React, {useState, Fragment} from "react";
+import {useNavigate} from "react-router-dom";
 
+import './booking-modal.css';
 
-import './booking-modal.css'
-
-
-const BookingModal = ({setIsDisplayModal, cardModal}) => {
-    const {duration, level, price, title} = cardModal
-    const [value, setValue] = useState('1');
+const BookingModal = ({setIsDisplayModal, cardModal, bookTrip}) => {
+    const navigate = useNavigate();
+    const {duration, level, price, title, id} = cardModal
+    const [numberOfGuests, setGuests] = useState('1');
     const [date, setDate] = useState('');
+
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        if (date && value) {
-            setIsDisplayModal(false)
+        if (date && numberOfGuests) {
+            bookTrip(id, {numberOfGuests, date});
+            navigate("/bookings");
         }
     }
 
@@ -31,7 +32,7 @@ const BookingModal = ({setIsDisplayModal, cardModal}) => {
         const inputRegex = /^[1-9]$|^10$/;
         const inputValue = event.target.value;
         if (inputValue === '' || inputRegex.test(inputValue)) {
-            return setValue(inputValue);
+            return setGuests(inputValue);
         }
     }
 
@@ -92,7 +93,7 @@ const BookingModal = ({setIsDisplayModal, cardModal}) => {
                                 type="number"
                                 min="1"
                                 max="10"
-                                value={value}
+                                value={numberOfGuests}
                                 onChange={handleGuests}
                                 required
                             />
@@ -103,7 +104,7 @@ const BookingModal = ({setIsDisplayModal, cardModal}) => {
                                 data-test-id="book-trip-popup-total-value"
                                 className="book-trip-popup__total-value"
                             >
-                                {price * value}$
+                                {price * numberOfGuests}$
                             </output>
                         </span>
                         <button

@@ -1,17 +1,16 @@
 import React, {useState} from "react";
-import {useParams} from "react-router-dom";
-
-import './trip-page.css'
+import {useNavigate, useParams} from "react-router-dom";
 import BookingModal from "../booking-modal/booking-modal";
 
-const tripsList = require('../../helpers/trips.json');
+import './trip-page.css'
 
-
-const TripPage = () => {
+const TripPage = ({tripsList, bookTrip, bookedTrips}) => {
+    const navigate = useNavigate();
     const [isDisplayModal, setIsDisplayModal] = useState(false);
     const {id} = useParams();
-    const tripCard = tripsList[id];
+    const tripCard = tripsList.find(trip => trip.id === id);
     const {title, description, level, duration, price, image} = tripCard;
+    const isAlreadyBooked = bookedTrips.find(trip => trip.id === id);
 
     return (
         <>
@@ -30,15 +29,15 @@ const TripPage = () => {
                                 {title}
                             </h3>
                             <div className="trip-info__content">
-                <span
-                    data-test-id="trip-details-duration"
-                    className="trip-info__duration"
-                >
-                  <strong>{duration}</strong> days
-                </span>
-                                <span data-test-id="trip-details-level" className="trip-info__level">
-                  {level}
-                </span>
+                            <span
+                                data-test-id="trip-details-duration"
+                                className="trip-info__duration"
+                            >
+                              <strong>{duration}</strong> days
+                            </span>
+                            <span data-test-id="trip-details-level" className="trip-info__level">
+                              {level}
+                            </span>
                             </div>
                         </div>
                         <div
@@ -56,22 +55,36 @@ const TripPage = () => {
                                 {price} $
                             </strong>
                         </div>
-                        <button
-                            data-test-id="trip-details-button"
-                            className="trip__button button"
-                            onClick={() => {
+                        {isAlreadyBooked
+                            ? <button
+                                data-test-id="trip-details-button"
+                                className="trip__button button trip__button--gray"
+                                onClick={() => navigate("/bookings")}
+                            >
+                                Check your trip on booking page
+                            </button>
+                            : <button
+                                data-test-id="trip-details-button"
+                                className="trip__button button"
+                                onClick={() => {
                                 setIsDisplayModal(!isDisplayModal);
                             }}
-                        >
+                            >
                             Book a trip
-                        </button>
+                            </button>}
                     </div>
                 </div>
             </main>
-            {isDisplayModal && <BookingModal
-                cardModal={tripCard}
-                isDisplayModal={isDisplayModal}
-                setIsDisplayModal={setIsDisplayModal}/>}
+            {
+                isDisplayModal ?
+                    <BookingModal
+                        cardModal={tripCard}
+                        isDisplayModal={isDisplayModal}
+                        setIsDisplayModal={setIsDisplayModal}
+                        bookTrip={bookTrip}
+                    /> :
+                    null
+            }
         </>
 
     )
