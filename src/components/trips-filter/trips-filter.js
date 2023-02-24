@@ -9,8 +9,8 @@ class TripsFilter extends Component {
     }
 
     onSearchDuration = (e) => {
-        const value = e.target.value;
-        const dataId = e.target.dataset.testId;
+        // const value = e.target.value;
+        // const dataId = e.target.dataset.testId;
     }
 
     render() {
