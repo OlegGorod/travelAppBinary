@@ -18,12 +18,10 @@ const Trips = ({tripsList}) => {
     const changeState = (temporary) => {
         setFilterValue(temporary)
     };
-    const searchTrip = () => onSearch(tripsList, filterValue);
-
 
     useEffect(() => {
-        searchTrip(filterValue);
-    }, [filterValue]);
+        onSearch(tripsList, filterValue);
+    }, [filterValue, tripsList]);
     return (
         <Fragment>
             <TripsFilter changeState={changeState}/>
