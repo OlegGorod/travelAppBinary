@@ -8,7 +8,7 @@ class TripsFilter extends Component {
         this.props.changeState(value);
     }
 
-    onSearchDuration = (e) => {
+    onSearchDuration = () => {
         // const value = e.target.value;
         // const dataId = e.target.dataset.testId;
     }
